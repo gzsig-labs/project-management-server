@@ -23,7 +23,8 @@ router.post('/projects', (req, res, next) => {
   Project.create({
     title,
     description,
-    tasks: []
+    tasks: [],
+    owner: req.user._id
   })
     .then(response => {
       res.json(response);
